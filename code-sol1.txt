@@ -1,0 +1,35 @@
+// sort algorithm example
+#include <iostream>     // std::cout
+#include <algorithm>    // std::sort
+#include <string>
+#include <vector>
+#include <map>
+#include <iostream>
+#include <algorithm>
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+int singleNumber(vector<int>& nums);
+
+int main()
+{
+    vector<int>v = { 2,2,1,4,4 };
+    cout<<singleNumber(v);
+}
+
+
+int singleNumber(vector<int>& nums)
+{
+
+    int result = 0;
+
+    for (int i = 0; i < nums.size(); i++) {
+        cout << result << "^" << nums[i];
+
+        result = result ^ nums[i];
+
+        cout<< "=" << result << endl;
+    }
+
+    return result;
+}
